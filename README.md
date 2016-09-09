@@ -23,6 +23,6 @@ Nothing more than a simple application which allows authentication and money tra
 * open [http://localhost:5000/](http://localhost:5000/)
 
 
-### Confused? You can easily get in touch with me [mailto:virgil.luta@gmail.com](virgil.luta@gmail.com) ###
+### Confused? You can easily get in touch with me [virgil.luta@gmail.com](mailto:virgil.luta@gmail.com) ###
 
 If you need any sort of support from running to deploying, feel free to contact me. ;)
