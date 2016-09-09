@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}BamBank - Transaction{% endblock %}
+{% block content %}
+    <div class="page-header">
+        <h1>Transactions so far:<h1>
+    </div>
+    <div>
+        <table class="table table-striped"> 
+            <thead> 
+                <tr> 
+                    <th>Transaction ID</th> 
+                    <th>From</th> 
+                    <th>To</th>
+                    <th>Amount</th>
+                    <th>Date</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                {% for transaction in transactions %}
+                <tr> 
+                    <td>{{ transaction.id }}</td> 
+                    <td>{{ transaction.from_user.username }}</td> 
+                    <td>{{ transaction.to_user.username }}</td>
+                    {% if current_user.id == transaction.from_id %}
+                        <td>-{{ transaction.amount }}.00 <i class="fa fa-money" aria-hidden="true"></td>
+                    {% else %}
+                        <td>{{ transaction.amount }}.00 <i class="fa fa-money" aria-hidden="true"></td>
+                    {% endif %}
+                    <td>{{ transaction.created_at.strftime('%d %b %Y - %H:%M:%S') }}</td> 
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

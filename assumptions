@@ -1,0 +1,8 @@
+Each user name is unique.
+The timezone of the bank users is utc.
+The projects size will stay the same and no grouping is needed on the templates.
+There will always be only one currency and a single flow of the money (one account = one bank account), therefore it is not needed to have a separate model to handle balance.
+Transactions can't be float amountwise.
+The users are happy with slower validation hence they are not paying for the product, therefore there is no need to keep the password hash as binary in the database.
+We have a small userbase, therefore a search for the transactions is not mandatory, yet!
+Javascript is enabled on browsers and people use IE9 +.

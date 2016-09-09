@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}BamBank{% endblock %}
+{% block content %}
+    <div class="page-header">
+        <h1>Welcome to BamBank!</h1>
+    </div>
+    {% if current_user.is_authenticated %}
+        <p class="lead">Your current balance is {{ current_user.balance }}.00 <i class="fa fa-money" aria-hidden="true"></i></p>
+        <p class="lead">Would you like to transfer money? If so feel free to create your transaction <a href="{{ url_for('transaction') }}" class="btn btn-primary">here</a></p>
+    {% else %}
+        <p class="lead">If you want to join the leading banking system around the world, look no further!</p>
+        <p class="lead">BamBank is here to boost your future. Need help on getting started?</p>
+        <p class="lead">Why don't you <a href="{{ url_for('register') }}" class="btn btn-primary">register</a> here today?</p>
+    {% endif %}
+{% endblock %}
